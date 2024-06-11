@@ -1,25 +1,24 @@
+#cre: Hậu Lương hehehe
 import pandas as pd
 with open('dschug.txt', 'a', encoding='utf-8') as df0:
     while True:
         hoten = input("Nhập họ và tên: ")
-        if hoten == "":
-            break
+        if hoten.strip() == "":
+            print("Họ và tên không được để trống, vui lòng nhập lại.")
+            continue
         msv = input("Nhập mã sinh viên: ")
-        if msv == "":
-            break
+        if msv.strip() == "":
+            print("Mã sinh viên không được để trống, vui lòng nhập lại.")
+            continue
         dtl = float(input("Nhập điểm tích lũy: "))
         if dtl <= 0:
-            break
+            print("Điểm tích lũy không được nhỏ hơn 1, vui lòng nhập lại.")
+            continue
         tccd = int(input("Nhập số tín chỉ chưa đạt: "))
-        df0.write('\t'.join([hoten, msv, str(dtl), str(tccd)]) + '\n')
-    print('Danh sách sinh viên vừa nhập')
-    print('\t'.join(['Họ và tên', 'Mã sinh viên', ' Điểm tích lũy', 'Số tín chỉ chưa đạt']))
-
-with open('dschug.txt', 'r', encoding='utf-8') as df0:
-    lines = df0.readlines()
-    for sv in lines:
-        print(sv.replace('\n', ' '))
-
+        cf = input("Tiếp tục nhap? (Y/N)")
+        if cf == 'N' or cf == 'n':
+            break
+    df0.write('\t'.join([hoten, msv, str(dtl), str(tccd)]) + '\n')
 res = True
 while res:
     hoi = int(input('Nhập lựa chọn của bạn (1 hoặc 2 hoặc 3): '))
@@ -38,5 +37,6 @@ while res:
     if hoi == 3:
         print('Hết rồi nhìn gì :)')
         break
+  
 
 
