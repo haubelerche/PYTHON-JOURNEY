@@ -35,7 +35,7 @@ while res:
         print('\nDanh sách xếp loại sinh viên\n')
         print(df1)
     if hoi == 3:
-        print('Hết rồi nhìn gì :)')
+        print('Kết thúc')
         break
   
 
